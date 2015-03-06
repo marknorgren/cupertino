@@ -24,6 +24,7 @@ command :'devices:list' do |c|
                title += "(You can register #{pluralize(number_of_additional_devices, 'additional device')})" if number_of_additional_devices > 0
 
                Terminal::Table.new :title => title do |t|
+                 t.style = {:border_x => "-", :border_i => "|"}
                  t << ["Device Name", "Device Identifier", "Enabled"]
                  t.add_separator
                  devices.compact.each do |device|

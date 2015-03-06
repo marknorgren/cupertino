@@ -24,9 +24,10 @@ command :'app_ids:list' do |c|
              else
                title = "Legend: #{COLORS_BY_PROPERTY_VALUES.collect{|k, v| k.send(v)}.join(', ')}"
                Terminal::Table.new :title => title do |t|
+                 t.style = :border_x => "-", :border_i => "|"}
                  t << ["Bundle Seed ID", "Description", "Development", "Distribution"]
+                 t << :separator
                  app_ids.each do |app_id|
-                   t << :separator
                    row = [app_id.bundle_seed_id, app_id.description]
                    [app_id.development_properties, app_id.distribution_properties].each do |properties|
                      values = []

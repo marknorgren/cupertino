@@ -21,6 +21,7 @@ command :'profiles:list' do |c|
                end
              else
                Terminal::Table.new do |t|
+                 t.style = {:border_x => "-", :border_i => "|"}
                  t << ["Profile", "App ID", "UUID", "Expiration", "Status"]
                  t.add_separator
                  profiles.each do |profile|

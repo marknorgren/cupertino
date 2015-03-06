@@ -19,6 +19,7 @@ command :'certificates:list' do |c|
                end
              else
                Terminal::Table.new do |t|
+                 t.style = {:border_x => "-", :border_i => "|"}
                  t << ["Name", "Type", "Expiration Date", "Status"]
                  t.add_separator
                  certificates.each do |certificate|
